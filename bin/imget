@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'lib')
+require 'imget'
+
+abort 'Whoops! Where is URL?' if ARGV.length != 1
+
+url    = ARGV.first
+imget  = Imget.new(url)
+images = imget.get_images
+
+puts images
